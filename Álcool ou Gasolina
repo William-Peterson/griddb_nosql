@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Consumo ÁLCOOL ou Gasolina</title>
+    <style>
+        body{
+            font: 16 Arial;
+            color: rgb(7, 26, 43);
+        }
+        h3{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <h3>ÁLCOOL ou GASOLINA?</h3>
+
+    <script>
+        //Essa função pula linha com im traço no intervalo
+        function pulaLinha(){
+            document.write('<br>')
+            document.write('<hr>')
+            document.write('<br>')
+        }
+
+        //essa função adiciona a frase e pula a linha sem precisarmos repetir a função pula linha e aumenta o tamanho da Fonte
+        function mostra(frase){
+            document.write(`<big>${frase}</big>`) //essa parte da função substitui o document.write que escreveriamos antes dos () e atribui ao valor (FRASE).
+            pulaLinha()
+        }
+        var tanqueCarro = 40
+        var kmGasolina = 480
+
+        var consumoG = kmGasolina / tanqueCarro
+        mostra(`O consumo é com Gasolina é de: ${Math.round(consumoG)}Km por litro.`)
+           
+        var kmAlcool = 300
+        var consumoA = kmAlcool / tanqueCarro
+        mostra(`O consumo com Álcool é de: ${Math.round(consumoA)}Km por litro.`)
+           
+        var precoGasolina = 4.30
+        var precoAlcool = 2.72
+           
+        var precoPorKmGasolina = consumoG/precoGasolina
+        mostra(`O valor por Km na Gasolina é de: ${precoPorKmGasolina.toFixed(2)}.`)
+           
+        var precoPorKmAlcool = consumoA/precoAlcool
+        mostra(`O valor por Km no Álcool é de: ${precoPorKmAlcool.toFixed(2)}.`)
+        </script>
+</body>
+</html>
